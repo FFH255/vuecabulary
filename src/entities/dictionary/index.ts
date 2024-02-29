@@ -1,0 +1,1 @@
+export { default as IdiomLink } from './ui/IdiomLink.vue'
