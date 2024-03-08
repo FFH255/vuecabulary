@@ -15,9 +15,9 @@ const getDictionaryQuery = () => query({
 
 export const useGetDictionaryQuery = useQuery(getDictionaryQuery)
 
-const getImageQuery = (params: { letter: string; id: number }) =>
+const getImageQuery = (params: { letter: string; title: string }) =>
   query({
-    url: `img/${params.letter}/${params.id}.png`,
+    url: `img/${params.letter}/${params.title}.png`,
     transform: async (res) => {
       const blob = await res.blob()
       return URL.createObjectURL(blob)

@@ -6,6 +6,7 @@ import { useGetImageQuery } from '../../shared/api/endpoints';
   interface DetailsProps {
     id: string
     part: string
+    title: string
   }
 
   const props = defineProps<DetailsProps>()
@@ -15,7 +16,7 @@ import { useGetImageQuery } from '../../shared/api/endpoints';
 
   const { data: imageSrc } = useGetImageQuery({
     letter: props.part.toLocaleLowerCase(),
-    id: Number(props.id) + 1,
+    title: props.title,
   })
 </script>
 

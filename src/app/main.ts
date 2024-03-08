@@ -6,15 +6,18 @@ import { DetailsPage } from '@/pages/details'
 import './style.css'
 
 const router = createRouter({
-  routes: [{
-    path: '/',
-    component: HomePage
-  }, {
-    path: '/idiom/:part/:id',
-    props: true,
-    component: DetailsPage
-  }],
-  history: createWebHistory()
+  routes: [
+    {
+      path: "/",
+      component: HomePage,
+    },
+    {
+      path: "/idiom/:part/:id/:title",
+      props: true,
+      component: DetailsPage,
+    },
+  ],
+  history: createWebHistory(),
 })
 
 const app = createApp(App)

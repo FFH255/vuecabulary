@@ -7,7 +7,7 @@
 
   const props = defineProps<IdiomProps>()
 
-  const url = `idiom/${props.part}/${props.id}`
+  const url = `idiom/${props.part}/${props.id}/${props.label}`
 </script>
 
 <template>
