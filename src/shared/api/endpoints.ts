@@ -14,3 +14,14 @@ const getDictionaryQuery = () => query({
 })
 
 export const useGetDictionaryQuery = useQuery(getDictionaryQuery)
+
+const getImageQuery = (params: { letter: string; id: number }) =>
+  query({
+    url: `img/${params.letter}/${params.id}.png`,
+    transform: async (res) => {
+      const blob = await res.blob()
+      return URL.createObjectURL(blob)
+    },
+  })
+
+export const useGetImageQuery = useQuery(getImageQuery)

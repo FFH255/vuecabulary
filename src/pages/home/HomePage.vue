@@ -6,8 +6,8 @@
 </script>
 
 <template>
-  <div v-if="isError">Error</div>
-  <div v-else-if="isLoading">Loading</div>
+  <h2 v-if="isError">Возникла ошибка</h2>
+  <h2 class="loader" v-else-if="isLoading">Загрузка...</h2>
   <template v-else>
     <div class="list">
       <div v-for="(value, part) of data" class="part">
@@ -26,6 +26,10 @@
 </template>
 
 <style scoped>
+  .loader {
+    text-align: center;
+  }
+
   .list {
     display: grid;
     gap: 3rem;

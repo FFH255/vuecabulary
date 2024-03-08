@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useGetDictionaryQuery } from '@/shared';
+import { useGetImageQuery } from '../../shared/api/endpoints';
 
 
   interface DetailsProps {
@@ -10,14 +11,20 @@ import { useGetDictionaryQuery } from '@/shared';
   const props = defineProps<DetailsProps>()
   const id = Number(props.id)
 
-  const {data, } = useGetDictionaryQuery({})
+  const { data, } = useGetDictionaryQuery({})
+
+  const { data: imageSrc } = useGetImageQuery({
+    letter: props.part.toLocaleLowerCase(),
+    id: Number(props.id) + 1,
+  })
 </script>
 
 <template>
-  <div v-if="data">
-    <span class="title">
+  <div v-if="data && imageSrc">
+    <h2>
       {{ data[props.part][id].title }}
-    </span>
+    </h2>
+    <img :src="imageSrc" :alt="data[props.part][id].title"/>
     <span class="description">
       {{ data[props.part][id].description }}
     </span>
@@ -27,12 +34,8 @@ import { useGetDictionaryQuery } from '@/shared';
 <style scoped>
   div {
     display: grid;
-    gap: 1rem;
-  }
-
-  .title {
-    text-align: center;
-    font-size: 1.5rem;
+    gap: 2rem;
+    justify-items: center;
   }
 
   .description {
