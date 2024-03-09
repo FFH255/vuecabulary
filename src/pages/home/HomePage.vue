@@ -1,48 +1,74 @@
 <script setup lang="ts">
-  import { IdiomLink } from '@/entities/dictionary';
-  import { useGetDictionaryQuery } from '@/shared';
-
-  const { data, isLoading, isError } = useGetDictionaryQuery({})
+  
 </script>
 
 <template>
-  <h2 v-if="isError">Возникла ошибка</h2>
-  <h2 class="loader" v-else-if="isLoading">Загрузка...</h2>
-  <template v-else>
-    <div class="list">
-      <div v-for="(value, part) of data" class="part">
-      <span class="title">
-        {{ part }}
+  <div class="home-page">
+    <div class="home-page-header">
+      <a class="home-page-header__link">Список</a>
+      <a class="home-page-header__link">Поиск по алфавиту</a>
+      <a class="home-page-header__link">Об авторах</a>
+    </div>
+    <div class="home-page-main">
+      <span class="home-page-main__title">
+        Словарь тульских говоров
       </span>
-      <IdiomLink 
-        v-for="(idiom, index) in value" 
-        :id="index" 
-        :part="String(part)"
-        :label="idiom.title"
-      />
+      <span class="home-page-main__description">
+        Пилотный вариант пятой части «Словаря тульских говоров» обобщает структурную и содержательную традицию семи выпусков «Материалов к словарю тульских говоров» (Тула, 2008, 2010, 2011, 2012, 2013, 2014, 2017), включающих в том числе устойчивые сочетания слов. Он знаменует переход к завершающему этапу работы по созданию диалектного словаря Тульского региона.
+      </span>
+      <a class="home-page-main__button">О словаре →</a>
     </div>
-    </div>
-  </template>
+  </div>
 </template>
 
 <style scoped>
-  .loader {
-    text-align: center;
-  }
-
-  .list {
+  .home-page {
     display: grid;
-    gap: 3rem;
+    grid-template-rows: auto 1fr;
+    background-image: url('/src/assets/home.png');
+    background-repeat: no-repeat;
+    padding: 2rem 5rem;
   }
 
-  .list .part {
+  .home-page-header {
+    color: var(--font);
+    font-size: 1.2rem;
+    display: flex;
+    gap: .8rem;
+    justify-content: end;
+  }
+
+  .home-page-header__link {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .home-page-main {
     display: grid;
-    width: 50vh;
-    margin: auto;
-    gap: .5rem;
+    place-content: center;
+    gap: 1.4rem;
   }
 
-  .list .part .title {
-    text-align: center;
+  .home-page-main__title {
+    color: var(--main);
+    font-size: 8rem;
+  }
+
+  .home-page-main__description {
+    color: var(--font);
+    font-size: 1.2rem;
+    line-height: 1.4;
+    max-width: 70%;
+  }
+
+  .home-page-main__button {
+    width: fit-content;
+    font-size: 1.2rem;
+    padding: .8rem 2.4rem;
+    background-color: transparent;
+    border: 2px solid var(--font);
+    color: var(--font);
+    cursor: pointer;
+    outline: none;
   }
 </style>

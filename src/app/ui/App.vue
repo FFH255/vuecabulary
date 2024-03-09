@@ -1,17 +1,18 @@
 <script setup lang="ts">
-  import { Navbar } from '@/shared'
-  import { navbarItems } from '../lib/routes'
+
 </script>
 
 <template>
-  <Navbar :items="navbarItems" title="Словарь" />
-  <div class="main">
-    <router-view/>
-  </div>
+    <div class="page-wrapper">
+        <router-view/>
+    </div>
 </template>
 
 <style scoped>
-  .main {
-    margin-top: 5rem;
-  }
+    .page-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        height: 100dvh;
+    }
 </style>
