@@ -1,11 +1,10 @@
-import { createApp } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
-import App from './ui/App.vue'
-import { HomePage } from '@/pages/home'
-import { DetailsPage } from '@/pages/details'
-import { MainLayout } from "../pages/mainLayout/index"
+import { DetailsPage } from "@/pages/details"
+import { DictionaryPage } from "@/pages/dictionary"
+import { HomePage } from "@/pages/home"
+import { createApp } from "vue"
+import { createRouter, createWebHistory } from "vue-router"
 import "./style.css"
-import { ListPage } from "@/pages/list"
+import App from "./ui/App.vue"
 
 const router = createRouter({
   routes: [
@@ -14,19 +13,13 @@ const router = createRouter({
       component: HomePage,
     },
     {
-      path: "/",
-      component: MainLayout,
-      children: [
-        {
-          path: "/list",
-          component: ListPage,
-        },
-        {
-          path: "/idiom/:part/:id/:title",
-          props: true,
-          component: DetailsPage,
-        },
-      ],
+      path: "/dictionary",
+      component: DictionaryPage,
+    },
+    {
+      path: "/idiom/:part/:id/:title",
+      props: true,
+      component: DetailsPage,
     },
   ],
   history: createWebHistory(),
@@ -34,4 +27,4 @@ const router = createRouter({
 
 const app = createApp(App)
 app.use(router)
-app.mount('#app')
+app.mount("#app")

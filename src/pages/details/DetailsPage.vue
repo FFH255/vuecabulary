@@ -22,7 +22,7 @@ import { useGetImageQuery } from '../../shared/api/endpoints';
 
 <template>
   <div v-if="data && imageSrc">
-    <h2>
+    <h2 class="title">
       {{ data[props.part][id].title }}
     </h2>
     <img :src="imageSrc" :alt="data[props.part][id].title"/>
@@ -35,8 +35,12 @@ import { useGetImageQuery } from '../../shared/api/endpoints';
 <style scoped>
   div {
     display: grid;
-    gap: 2rem;
+    gap: 1rem;
     justify-items: center;
+  }
+
+  .title {
+    margin-top: 2rem;
   }
 
   .description {

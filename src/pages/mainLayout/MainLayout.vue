@@ -28,5 +28,8 @@
 
   .page__main {
     margin-top: 5rem;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
   }
 </style>

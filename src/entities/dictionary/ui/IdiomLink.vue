@@ -11,7 +11,13 @@
 </script>
 
 <template>
-  <router-link :to="url">
+  <router-link :to="url" class="idiom-link">
     {{ props.label }}
   </router-link>
 </template>
+
+<style scoped>
+  .idiom-link {
+    color: var(--font);
+  }
+</style>
