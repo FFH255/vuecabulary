@@ -16,7 +16,7 @@
       <span class="home-page-main__description">
         Пилотный вариант пятой части «Словаря тульских говоров» обобщает структурную и содержательную традицию семи выпусков «Материалов к словарю тульских говоров» (Тула, 2008, 2010, 2011, 2012, 2013, 2014, 2017), включающих в том числе устойчивые сочетания слов. Он знаменует переход к завершающему этапу работы по созданию диалектного словаря Тульского региона.
       </span>
-      <a class="home-page-main__button">О словаре →</a>
+      <router-link to="/list" class="home-page-main__button">О словаре →</router-link>
     </div>
   </div>
 </template>
@@ -52,6 +52,7 @@
   .home-page-main__title {
     color: var(--main);
     font-size: 8rem;
+    line-height: .9;
   }
 
   .home-page-main__description {
@@ -70,5 +71,6 @@
     color: var(--font);
     cursor: pointer;
     outline: none;
+    text-decoration: none;
   }
 </style>

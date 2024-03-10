@@ -3,7 +3,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import App from './ui/App.vue'
 import { HomePage } from '@/pages/home'
 import { DetailsPage } from '@/pages/details'
-import './style.css'
+import { MainLayout } from "../pages/mainLayout/index"
+import "./style.css"
+import { ListPage } from "@/pages/list"
 
 const router = createRouter({
   routes: [
@@ -12,9 +14,19 @@ const router = createRouter({
       component: HomePage,
     },
     {
-      path: "/idiom/:part/:id/:title",
-      props: true,
-      component: DetailsPage,
+      path: "/",
+      component: MainLayout,
+      children: [
+        {
+          path: "/list",
+          component: ListPage,
+        },
+        {
+          path: "/idiom/:part/:id/:title",
+          props: true,
+          component: DetailsPage,
+        },
+      ],
     },
   ],
   history: createWebHistory(),
