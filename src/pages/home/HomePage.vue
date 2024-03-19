@@ -4,11 +4,6 @@
 
 <template>
   <div class="home-page">
-    <div class="home-page-header">
-      <a class="home-page-header__link">Список</a>
-      <a class="home-page-header__link">Поиск по алфавиту</a>
-      <router-link to="/authors" class="home-page-header__link">Об авторах</router-link>
-    </div>
     <div class="home-page-main">
       <span class="home-page-main__title">
         Словарь тульских говоров
@@ -24,26 +19,12 @@
 <style scoped>
   .home-page {
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: 1fr;
     background-image: url('/src/assets/home.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     padding: 2rem 5rem;
-  }
-
-  .home-page-header {
-    color: var(--font);
-    font-size: 1.2rem;
-    display: flex;
-    gap: .8rem;
-    justify-content: end;
-  }
-
-  .home-page-header__link {
-    text-decoration: underline;
-    cursor: pointer;
-    color: var(--font);
   }
 
   .home-page-main {

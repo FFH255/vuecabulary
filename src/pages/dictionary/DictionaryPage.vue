@@ -46,6 +46,9 @@
     display: grid;
     place-content: center;
     background-image: url('/src/assets/dictionary.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .about-dictionary__title {
