@@ -21,7 +21,8 @@ import { useGetImageQuery } from '../../shared/api/endpoints';
 </script>
 
 <template>
-  <div v-if="data && imageSrc">
+  <div class="page">
+    <div v-if="data && imageSrc">
     <h2 class="title">
       {{ data[props.part][id].title }}
     </h2>
@@ -30,21 +31,33 @@ import { useGetImageQuery } from '../../shared/api/endpoints';
       {{ data[props.part][id].description }}
     </span>
   </div>
+  </div>
 </template>
 
 <style scoped>
+  .page {
+    background-color: black;
+  }
+
   div {
+    background-color: black;
+    color: var(--font);
     display: grid;
-    gap: 1rem;
+    gap: 6rem;
     justify-items: center;
+    align-content: start;
   }
 
   .title {
-    margin-top: 2rem;
+    margin-top: 8rem;
+    color: var(--main);
+    font-size: 2rem;
   }
 
   .description {
     max-width: 70vw;
     margin: auto;
+    font-size: 1.3rem;
+    line-height: 1.5;
   }
 </style>
