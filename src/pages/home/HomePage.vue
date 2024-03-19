@@ -7,7 +7,7 @@
     <div class="home-page-header">
       <a class="home-page-header__link">Список</a>
       <a class="home-page-header__link">Поиск по алфавиту</a>
-      <a class="home-page-header__link">Об авторах</a>
+      <router-link to="/authors" class="home-page-header__link">Об авторах</router-link>
     </div>
     <div class="home-page-main">
       <span class="home-page-main__title">
@@ -26,6 +26,8 @@
     display: grid;
     grid-template-rows: auto 1fr;
     background-image: url('/src/assets/home.png');
+    background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
     padding: 2rem 5rem;
   }
@@ -41,6 +43,7 @@
   .home-page-header__link {
     text-decoration: underline;
     cursor: pointer;
+    color: var(--font);
   }
 
   .home-page-main {

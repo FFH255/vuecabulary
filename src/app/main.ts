@@ -5,6 +5,7 @@ import { createApp } from "vue"
 import { createRouter, createWebHistory } from "vue-router"
 import "./style.css"
 import App from "./ui/App.vue"
+import { AuthorsPage } from "@/pages/authors"
 
 const router = createRouter({
   routes: [
@@ -20,6 +21,10 @@ const router = createRouter({
       path: "/idiom/:part/:id/:title",
       props: true,
       component: DetailsPage,
+    },
+    {
+      path: "/authors",
+      component: AuthorsPage,
     },
   ],
   history: createWebHistory(),
