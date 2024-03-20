@@ -6,6 +6,7 @@ import { createRouter, createWebHistory } from "vue-router"
 import "./style.css"
 import App from "./ui/App.vue"
 import { AuthorsPage } from "@/pages/authors"
+import { AboutDictionaryPage } from "@/pages/about-dictionary"
 
 const router = createRouter({
   routes: [
@@ -25,6 +26,10 @@ const router = createRouter({
     {
       path: "/authors",
       component: AuthorsPage,
+    },
+    {
+      path: "/about-dictionary",
+      component: AboutDictionaryPage,
     },
   ],
   history: createWebHistory(),

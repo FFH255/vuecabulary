@@ -5,7 +5,8 @@
 <template>
     <div class="home-page-header">
         <router-link to="/" class="home-page-header__link">Главная</router-link>  
-        <router-link to="/dictionary" class="home-page-header__link">О словаре</router-link>  
+        <router-link to="/dictionary" class="home-page-header__link">Поиск по буквам</router-link>  
+        <router-link to="/about-dictionary" class="home-page-header__link">О словаре</router-link>  
         <router-link to="/authors" class="home-page-header__link">Об авторах</router-link>
     </div>
     <div class="page-wrapper">
@@ -19,6 +20,7 @@
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
         height: 100dvh;
+        background-color: black;
     }
 
     .home-page-header {
